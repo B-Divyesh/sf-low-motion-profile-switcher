@@ -1,122 +1,84 @@
-# Handoff — Low Motion Profile Switcher v1
+# Verification handoff — FAIL
 
-Date: 2026-08-28  
-Work order: `low-motion-profile-switcher-build-1`  
-Artifact: WXT + TypeScript Manifest V3 extension and Vite static site
+Date: 2026-08-28
 
-## What was built
+Work order: `low-motion-profile-switcher-verify-1`
 
-- A real per-hostname motion policy with three settings:
-  - **Gentle:** caps motion at 160 ms, transitions at 120 ms, and animation at
-    one pass.
-  - **Balanced:** settles animations to one effective frame and allows an 80 ms
-    state-change cue.
-  - **Still:** disables CSS animations and transitions.
-- All profiles explicitly exclude ARIA status, progressbar, and live regions,
-  plus native `progress` and `meter` elements and their descendants. Focus and
-  cursor feedback are untouched.
-- Autoplaying or looping audio/video is paused on initial load and when inserted
-  later. Only media paused by the extension is marked and offered restoration.
-- A one-click ten-minute motion exception can be ended early and automatically
-  expires back to the selected profile.
-- A keyboard-accessible, 370 px extension popup with enabled, loading,
-  temporary, unavailable/protected-page, and storage-error states.
-- Local-only settings through `chrome.storage.local`; no telemetry, remote
-  configuration, accounts, or sensitive-input inspection.
-- Responsive luminous-glass product site, static original hero artwork,
-  privacy/terms pages, offline status, service-worker shell cache, sitemap,
-  robots policy, and caching/security headers.
-- Chromium extension package linked at
-  `dist/site/downloads/low-motion-profile-switcher-chrome.zip`.
+Tested candidate: `0b8f71dc3b919388e3fe753320614af7ad06485b`
 
-## Build outputs
+Tested deployment: <https://low-motion-profile-switcher.sociobot.in>
 
-Exact clean build command:
+## Result
+
+**FAIL.** The live deployment is present and matches the candidate, all supplied
+local gates pass, and the CSS profile/exception flows work. The extension does
+not reliably pause autoplay/looping media when the profile is already active,
+which is a core acceptance requirement.
+
+## Blocking evidence
+
+A real looping WAV fixture was tested in the packaged Chromium extension with
+the per-host Balanced setting stored before navigation:
+
+- 5/5 parser-created autoplay loads continued playing after one second
+  (`paused=false`, approximately `0.94 s` elapsed, no extension marker).
+- Dynamically inserted autoplay media also continued playing and unmarked.
+- When the profile was enabled after playback had begun, the same media paused
+  and was marked, confirming a timing race.
+
+`pauseAutoplayMedia()` skips media while it is initially paused, while the
+MutationObserver only reacts to insertion and never retries on `play`. See the
+full evidence and severity list in `.factory/verification.md`.
+
+## Verification summary
+
+- Clean detached checkout at the candidate SHA; `npm ci` succeeded.
+- `npm run check`: pass.
+- `npm test`: pass (7 unit tests plus packaged-extension verifier).
+- `npm run build`: pass; exact `dist/` outputs produced.
+- `npm run test:e2e`: pass, 10/10.
+- `npm audit --audit-level=low`: pass, 0 vulnerabilities.
+- Live HTML/legal/SW files are byte-identical to the build. The live ZIP differs
+  only in ZIP timestamps; extracted contents match recursively.
+- Live axe: zero violations on `/`, `/privacy/`, and `/terms/` at 1440 px and
+  390 px; no console/page errors or overflow.
+- Keyboard, visible focus, reduced motion, per-host persistence, temporary
+  exception start/end/expiry, protected-page state, error state, and sensitive
+  input preservation were exercised.
+- Privacy passes: no third-party runtime requests, cookies, web storage,
+  analytics, telemetry, account, or remote product API.
+- Service-worker update and controlled offline reload pass.
+- Lighthouse mobile: 100/100/100/100; LCP 1,211 ms, TBT 53 ms, CLS 0.
+- Static/serverless product: API rate limiting, Entra sign-in, backend
+  concurrency, and library/CLI consumer checks are not applicable.
+
+## Other defects
+
+- **Medium:** live hashed assets/fonts receive 30-second caching rather than
+  the authored one-year immutable policy.
+- **Medium:** several site/popup controls are smaller than 44×44 px, and
+  substantial descriptive copy is below the supplied 16 px baseline.
+- **Low:** AVIF has `application/octet-stream`; live response policy omits the
+  authored Permissions-Policy and weakens Referrer-Policy; no CSP is present.
+- **Low:** unknown routes return the home page with HTTP 200.
+
+## How to re-verify
 
 ```sh
-npm install
-npm run build
-```
-
-Outputs:
-
-- Static deployment root: `dist/site/` (`index.html` is at that root)
-- Unpacked extension: `dist/extension/chrome-mv3/`
-- Extension zip: `dist/packages/low-motion-profile-switcher-chrome.zip`
-- Site download copy: `dist/site/downloads/low-motion-profile-switcher-chrome.zip`
-
-Final package sizes:
-
-- Extension zip: 80 KB
-- Extension runtime JavaScript: 10.3 KB total
-- Site initial JavaScript: 0.96 KB (0.51 KB gzip)
-- Site CSS: 17.0 KB (4.56 KB gzip)
-- Self-hosted fonts: 63.0 KB total
-- Mobile hero: 11.3 KB AVIF / 21.9 KB WebP
-
-## Verification
-
-All checks ran successfully on 2026-08-28:
-
-```sh
+npm ci
 npm run check
 npm test
-npm run test:e2e
 npm run build
-npm audit
+npm run test:e2e
+npm audit --audit-level=low
 ```
 
-- TypeScript strict check: pass.
-- Vitest: 7/7 unit tests pass.
-- Loaded Chromium extension test: pass. It verifies a real MV3 content script
-  stops decorative animation, preserves animation inside a status region,
-  removes its policy for an active exception, and reports no serious/critical
-  axe findings in the popup.
-- Playwright: 10/10 tests pass across desktop Chromium and 390×844 mobile.
-  Tests cover `/`, `/privacy/`, and `/terms/`, one-H1/landmark structure,
-  console errors, axe, responsive overflow, offline status, downloads, and
-  reduced motion.
-- `npm audit`: 0 vulnerabilities.
-- Clean build: pass; required static and extension artifacts present.
+Then use a loaded-extension fixture containing valid initial and dynamically
+inserted autoplay/loop media. Store the site profile before navigation; verify
+non-status media never starts, status media remains available, and disabling or
+the temporary exception resumes only media paused by the extension.
 
-Lighthouse 12.8.2 mobile against the production build:
+## Repository state
 
-| Category/metric | Result |
-| --- | ---: |
-| Performance | 100 |
-| Accessibility | 100 |
-| Best practices | 100 |
-| SEO | 100 |
-| Largest Contentful Paint | 1.5 s |
-| Cumulative Layout Shift | 0 |
-| Total Blocking Time | 0 ms |
-
-INP is not produced without user interaction in a lab navigation; 0 ms TBT and
-the absence of main-thread tasks provide the lab proxy. The site was also
-visually reviewed at 1440 px and 390 px.
-
-## Artwork and licensing
-
-The hero illustration is original AI-generated work produced with the factory
-Azure OpenAI image deployment. The first crushed-black candidate was rejected;
-the accepted source, exact prompt, and model provenance are in `assets/src/` and
-`.factory/design.md`. Responsive AVIF/WebP derivatives are in
-`site/public/assets/`. Interface marks and icons are hand-authored. Font notices
-are in `THIRD_PARTY_NOTICES.md`.
-
-## Known boundaries and next steps
-
-- Browser-protected pages (`chrome://`, extension pages, and browser stores)
-  cannot be modified and show a clear unavailable state.
-- CSS animation, CSS transitions, and autoplay/looping media are covered.
-  Pixel motion rendered inside canvas/WebGL, animated GIF/image files, and some
-  security-isolated frames cannot be selectively frozen without destructive
-  page replacement. This is disclosed in the README and terms.
-- Preserved feedback is identified through explicit semantic HTML. Sites that
-  omit status/progress semantics may have those custom animations settled; the
-  temporary exception provides immediate recovery.
-- The zip is unsigned. Factory/store publishing is the next distribution step;
-  no DNS, infrastructure, billing, or store configuration was changed here.
-- A useful post-launch follow-up is an opt-in local “was anything important
-  lost?” counter to measure the brief's two-week success criterion without
-  telemetry. It is intentionally not part of v1.
+Only verification documentation was changed. Product code and the unrelated
+pre-existing `graphify-out/` directory were not modified.
