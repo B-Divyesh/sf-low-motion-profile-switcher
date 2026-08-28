@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://low-motion-profile-switcher.sociobot.in/sitemap.xml
