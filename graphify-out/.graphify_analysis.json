@@ -1,0 +1,297 @@
+{
+  "communities": {
+    "0": [
+      "entrypoints_content",
+      "entrypoints_popup_main",
+      "entrypoints_popup_main_allsettings",
+      "entrypoints_popup_main_announce",
+      "entrypoints_popup_main_current",
+      "entrypoints_popup_main_init",
+      "entrypoints_popup_main_profileinputs",
+      "entrypoints_popup_main_profilename",
+      "entrypoints_popup_main_render",
+      "entrypoints_popup_main_save",
+      "lib_motion_policy_style_id",
+      "lib_settings",
+      "lib_settings_default_setting",
+      "lib_settings_exception_minutes",
+      "lib_settings_exceptionend",
+      "lib_settings_geteffectivesetting",
+      "lib_settings_motionprofile",
+      "lib_settings_normalizehostname",
+      "lib_settings_sitesetting",
+      "lib_settings_sitesettings",
+      "lib_settings_storage_key",
+      "tests_unit_settings_test"
+    ],
+    "1": [
+      "axe_core_playwright",
+      "jsdom",
+      "package_devdependencies",
+      "package_devdependencies_axe_core_playwright",
+      "package_devdependencies_jsdom",
+      "package_devdependencies_playwright_test",
+      "package_devdependencies_sharp",
+      "package_devdependencies_types_chrome",
+      "package_devdependencies_types_node",
+      "package_devdependencies_typescript",
+      "package_devdependencies_vite",
+      "package_devdependencies_vitest",
+      "package_devdependencies_wxt",
+      "playwright_test",
+      "sharp",
+      "types_chrome",
+      "types_node",
+      "typescript",
+      "vite",
+      "vitest",
+      "wxt"
+    ],
+    "2": [
+      "ref_chrome",
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_es2022",
+      "ref_node",
+      "ref_vite_client",
+      "ref_vitest_globals",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowimportingtsextensions",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_resolvejsonmodule",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target",
+      "tsconfig_compileroptions_types",
+      "tsconfig_compileroptions_usedefineforclassfields"
+    ],
+    "3": [
+      "package",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_build_extension",
+      "package_scripts_build_site",
+      "package_scripts_check",
+      "package_scripts_clean",
+      "package_scripts_copy_download",
+      "package_scripts_dev",
+      "package_scripts_dev_site",
+      "package_scripts_package_extension",
+      "package_scripts_test",
+      "package_scripts_test_e2e",
+      "package_scripts_test_extension",
+      "package_scripts_test_unit",
+      "package_type",
+      "package_version"
+    ],
+    "4": [
+      "entrypoints_content_main",
+      "lib_motion_policy",
+      "lib_motion_policy_ispreservedelement",
+      "lib_motion_policy_pauseautoplaymedia",
+      "lib_motion_policy_paused_media_attr",
+      "lib_motion_policy_policycss",
+      "lib_motion_policy_restorepausedmedia",
+      "lib_motion_policy_shouldapply",
+      "lib_settings_istemporarilyallowed",
+      "tests_unit_motion_policy_test"
+    ],
+    "5": [
+      "ref_entrypoints",
+      "ref_lib",
+      "ref_scripts",
+      "ref_site",
+      "ref_tests",
+      "ref_ts",
+      "tsconfig",
+      "tsconfig_include"
+    ],
+    "6": [
+      "scripts_verify_extension",
+      "scripts_verify_extension_address",
+      "scripts_verify_extension_extensionpath",
+      "scripts_verify_extension_profilepath",
+      "scripts_verify_extension_server"
+    ],
+    "7": [
+      "scripts_package_extension",
+      "scripts_package_extension_extensiondir",
+      "scripts_package_extension_output",
+      "scripts_package_extension_packagedir"
+    ],
+    "8": [
+      "site_main",
+      "site_main_banner",
+      "site_main_syncconnection"
+    ],
+    "9": [
+      "scripts_clean",
+      "scripts_clean_target"
+    ],
+    "10": [
+      "scripts_copy_download",
+      "scripts_copy_download_downloads"
+    ],
+    "11": [
+      "site_public_sw",
+      "site_public_sw_shell"
+    ],
+    "12": [
+      "entrypoints_background"
+    ],
+    "13": [
+      "playwright_config"
+    ],
+    "14": [
+      "tests_e2e_site_spec"
+    ],
+    "15": [
+      "vite_site_config"
+    ],
+    "16": [
+      "vitest_config"
+    ],
+    "17": [
+      "wxt_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.18614718614718614,
+    "1": 0.09523809523809523,
+    "2": 0.1,
+    "3": 0.10526315789473684,
+    "4": 0.4444444444444444,
+    "5": 0.25,
+    "6": 0.4,
+    "7": 0.5,
+    "8": 0.6666666666666666,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0
+  },
+  "gods": [
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 14
+    },
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 13
+    },
+    {
+      "id": "lib_settings_geteffectivesetting",
+      "label": "getEffectiveSetting()",
+      "degree": 7
+    },
+    {
+      "id": "tsconfig_include",
+      "label": "include",
+      "degree": 7
+    },
+    {
+      "id": "entrypoints_content_main",
+      "label": "main()",
+      "degree": 6
+    },
+    {
+      "id": "entrypoints_popup_main_render",
+      "label": "render()",
+      "degree": 6
+    },
+    {
+      "id": "lib_settings_istemporarilyallowed",
+      "label": "isTemporarilyAllowed()",
+      "degree": 6
+    },
+    {
+      "id": "lib_motion_policy_shouldapply",
+      "label": "shouldApply()",
+      "degree": 5
+    },
+    {
+      "id": "lib_motion_policy_pauseautoplaymedia",
+      "label": "pauseAutoplayMedia()",
+      "degree": 5
+    },
+    {
+      "id": "tsconfig_compileroptions_types",
+      "label": "types",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "main()",
+      "target": "getEffectiveSetting()",
+      "source_files": [
+        "entrypoints/content.ts",
+        "lib/settings.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "render()",
+      "target": "isTemporarilyAllowed()",
+      "source_files": [
+        "entrypoints/popup/main.ts",
+        "lib/settings.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "main()",
+      "target": "pauseAutoplayMedia()",
+      "source_files": [
+        "entrypoints/content.ts",
+        "lib/motion-policy.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "main()",
+      "target": "policyCss()",
+      "source_files": [
+        "entrypoints/content.ts",
+        "lib/motion-policy.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "main()",
+      "target": "restorePausedMedia()",
+      "source_files": [
+        "entrypoints/content.ts",
+        "lib/motion-policy.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
