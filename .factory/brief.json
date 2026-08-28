@@ -1,0 +1,12 @@
+{
+  "slug": "low-motion-profile-switcher",
+  "title": "Low Motion Profile Switcher",
+  "territory": "utilities",
+  "user": "A motion-sensitive computer user who needs a reliable way to reduce distracting or nauseating animation in selected apps and browser tabs without losing useful state changes.",
+  "smallest_useful_product": "A browser extension that applies per-site low-motion profiles: pause nonessential autoplay/animated backgrounds, suppress rapid transforms, retain explicit progress/status changes, and offer a one-click temporary exception.",
+  "success_measure": "In a two-week pilot, users keep the profile enabled on at least five sites and rate fewer than 10% of resulting page changes as lost important information.",
+  "artifact_class": "browser-extension",
+  "monetization": "free",
+  "constraints": "Respect site security boundaries; avoid modifying sensitive input data; make every rule reversible; clearly distinguish motion comfort from medical treatment.",
+  "state": "RESEARCHED"
+}
