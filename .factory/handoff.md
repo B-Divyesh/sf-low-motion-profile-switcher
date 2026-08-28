@@ -74,10 +74,13 @@ npm run test:e2e
 npm audit --audit-level=low
 ```
 
-Deploy the verified `dist/site/` static root. It includes
-`downloads/low-motion-profile-switcher-chrome.zip`; no separate artifact copy
-step is required. Push of this commit is the configured static deployment
-handoff.
+Deployed the verified `dist/site/` static root to Azure Static Web Apps
+production (`sf-low-motion-profile-switcher`, resource group `sociobot`) with
+the supplied deployment configuration. Live verification at
+`https://low-motion-profile-switcher.sociobot.in` returned HTTP 200 for `/`,
+`/demo/`, and `/downloads/low-motion-profile-switcher-chrome.zip`; the live ZIP
+was 79,915 bytes and passed `unzip -t`. Live `verify-url.sh` also passed for
+home (2,604 ms) and demo (2,582 ms), both without browser errors.
 
 ## Known gaps
 
