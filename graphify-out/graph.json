@@ -45,10 +45,34 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "file_type": "code",
       "norm_label": "staticwebappconfig",
       "source_file": "tests/unit/site-policy.test.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "site_demo_demostate",
+      "label": "DemoState",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "demostate",
+      "source_file": "site/demo.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "site_demo_profile",
+      "label": "Profile",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "profile",
+      "source_file": "site/demo.ts",
       "source_location": "L4"
     },
     {
@@ -155,7 +179,7 @@
       "label": "precacheShell()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "file_type": "code",
       "norm_label": "precacheshell()",
       "source_file": "site/public/sw.js",
@@ -166,11 +190,11 @@
       "label": "startDisposableSite()",
       "_callable": true,
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "file_type": "code",
       "norm_label": "startdisposablesite()",
       "source_file": "tests/e2e/site.spec.ts",
-      "source_location": "L9"
+      "source_location": "L11"
     },
     {
       "id": "entrypoints_content_main",
@@ -239,11 +263,44 @@
       "source_location": "L41"
     },
     {
+      "id": "site_demo_readstate",
+      "label": "readState()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "readstate()",
+      "source_file": "site/demo.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "site_demo_render",
+      "label": "render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "render()",
+      "source_file": "site/demo.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "site_demo_savestate",
+      "label": "saveState()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "savestate()",
+      "source_file": "site/demo.ts",
+      "source_location": "L24"
+    },
+    {
       "id": "site_main_syncconnection",
       "label": "syncConnection()",
       "_callable": true,
       "_origin": "ast",
-      "community": 9,
+      "community": 5,
       "file_type": "code",
       "norm_label": "syncconnection()",
       "source_file": "site/main.ts",
@@ -550,10 +607,40 @@
       "source_location": "L1"
     },
     {
+      "id": "scripts_create_social_assets",
+      "label": "create-social-assets.mjs",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "create-social-assets.mjs",
+      "source_file": "scripts/create-social-assets.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_create_social_assets_output",
+      "label": "output",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "output",
+      "source_file": "scripts/create-social-assets.mjs",
+      "source_location": "L6"
+    },
+    {
+      "id": "scripts_create_social_assets_source",
+      "label": "source",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "source",
+      "source_file": "scripts/create-social-assets.mjs",
+      "source_location": "L5"
+    },
+    {
       "id": "site_public_sw",
       "label": "sw.js",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "file_type": "code",
       "norm_label": "sw.js",
       "source_file": "site/public/sw.js",
@@ -563,7 +650,7 @@
       "id": "site_public_sw_shell",
       "label": "SHELL",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "file_type": "code",
       "norm_label": "shell",
       "source_file": "site/public/sw.js",
@@ -573,7 +660,7 @@
       "id": "tests_e2e_site_spec",
       "label": "site.spec.ts",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "file_type": "code",
       "norm_label": "site.spec.ts",
       "source_file": "tests/e2e/site.spec.ts",
@@ -583,17 +670,17 @@
       "id": "tests_e2e_site_spec_siteroot",
       "label": "siteRoot",
       "_origin": "ast",
-      "community": 11,
+      "community": 12,
       "file_type": "code",
       "norm_label": "siteroot",
       "source_file": "tests/e2e/site.spec.ts",
-      "source_location": "L7"
+      "source_location": "L9"
     },
     {
       "id": "scripts_clean",
       "label": "clean.mjs",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "file_type": "code",
       "norm_label": "clean.mjs",
       "source_file": "scripts/clean.mjs",
@@ -603,7 +690,7 @@
       "id": "scripts_clean_target",
       "label": "target",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "file_type": "code",
       "norm_label": "target",
       "source_file": "scripts/clean.mjs",
@@ -613,7 +700,7 @@
       "id": "scripts_copy_download",
       "label": "copy-download.mjs",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "file_type": "code",
       "norm_label": "copy-download.mjs",
       "source_file": "scripts/copy-download.mjs",
@@ -623,7 +710,7 @@
       "id": "scripts_copy_download_downloads",
       "label": "downloads",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "file_type": "code",
       "norm_label": "downloads",
       "source_file": "scripts/copy-download.mjs",
@@ -633,7 +720,7 @@
       "id": "tests_unit_site_policy_test",
       "label": "site-policy.test.ts",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "file_type": "code",
       "norm_label": "site-policy.test.ts",
       "source_file": "tests/unit/site-policy.test.ts",
@@ -643,7 +730,7 @@
       "id": "entrypoints_background",
       "label": "background.ts",
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "file_type": "code",
       "norm_label": "background.ts",
       "source_file": "entrypoints/background.ts",
@@ -653,7 +740,7 @@
       "id": "playwright_config",
       "label": "playwright.config.ts",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "file_type": "code",
       "norm_label": "playwright.config.ts",
       "source_file": "playwright.config.ts",
@@ -663,7 +750,7 @@
       "id": "vite_site_config",
       "label": "vite.site.config.ts",
       "_origin": "ast",
-      "community": 17,
+      "community": 18,
       "file_type": "code",
       "norm_label": "vite.site.config.ts",
       "source_file": "vite.site.config.ts",
@@ -673,20 +760,10 @@
       "id": "vitest_config",
       "label": "vitest.config.ts",
       "_origin": "ast",
-      "community": 18,
+      "community": 19,
       "file_type": "code",
       "norm_label": "vitest.config.ts",
       "source_file": "vitest.config.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "wxt_config",
-      "label": "wxt.config.ts",
-      "_origin": "ast",
-      "community": 19,
-      "file_type": "code",
-      "norm_label": "wxt.config.ts",
-      "source_file": "wxt.config.ts",
       "source_location": "L1"
     },
     {
@@ -888,6 +965,16 @@
       "norm_label": "version",
       "source_file": "package.json",
       "source_location": "L3"
+    },
+    {
+      "id": "wxt_config",
+      "label": "wxt.config.ts",
+      "_origin": "ast",
+      "community": 20,
+      "file_type": "code",
+      "norm_label": "wxt.config.ts",
+      "source_file": "wxt.config.ts",
+      "source_location": "L1"
     },
     {
       "id": "tsconfig_compileroptions",
@@ -1140,230 +1227,40 @@
       "source_location": "L1"
     },
     {
-      "id": "tsconfig",
-      "label": "tsconfig.json",
+      "id": "site_demo",
+      "label": "demo.ts",
       "_origin": "ast",
       "community": 5,
       "file_type": "code",
-      "norm_label": "tsconfig.json",
-      "source_file": "tsconfig.json",
+      "norm_label": "demo.ts",
+      "source_file": "site/demo.ts",
       "source_location": "L1"
     },
     {
-      "id": "tsconfig_include",
-      "label": "include",
+      "id": "site_demo_profilebuttons",
+      "label": "profileButtons",
       "_origin": "ast",
       "community": 5,
       "file_type": "code",
-      "norm_label": "include",
-      "source_file": "tsconfig.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "ref_entrypoints",
-      "label": "entrypoints",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "concept",
-      "norm_label": "entrypoints",
-      "source_file": "tsconfig.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "ref_lib",
-      "label": "lib",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "concept",
-      "norm_label": "lib",
-      "source_file": "tsconfig.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "ref_scripts",
-      "label": "scripts",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "concept",
-      "norm_label": "scripts",
-      "source_file": "tsconfig.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "ref_site",
-      "label": "site",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "concept",
-      "norm_label": "site",
-      "source_file": "tsconfig.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "ref_tests",
-      "label": "tests",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "concept",
-      "norm_label": "tests",
-      "source_file": "tsconfig.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "ref_ts",
-      "label": "*.ts",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "concept",
-      "norm_label": "*.ts",
-      "source_file": "tsconfig.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "scripts_verify_extension",
-      "label": "verify-extension.mjs",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "verify-extension.mjs",
-      "source_file": "scripts/verify-extension.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_verify_extension_address",
-      "label": "address",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "address",
-      "source_file": "scripts/verify-extension.mjs",
-      "source_location": "L55"
-    },
-    {
-      "id": "scripts_verify_extension_extensionpath",
-      "label": "extensionPath",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "extensionpath",
-      "source_file": "scripts/verify-extension.mjs",
-      "source_location": "L8"
-    },
-    {
-      "id": "scripts_verify_extension_profilepath",
-      "label": "profilePath",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "profilepath",
-      "source_file": "scripts/verify-extension.mjs",
+      "norm_label": "profilebuttons",
+      "source_file": "site/demo.ts",
       "source_location": "L9"
     },
     {
-      "id": "scripts_verify_extension_server",
-      "label": "server",
+      "id": "site_demo_state",
+      "label": "state",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
-      "norm_label": "server",
-      "source_file": "scripts/verify-extension.mjs",
-      "source_location": "L29"
-    },
-    {
-      "id": "scripts_verify_extension_wav",
-      "label": "wav",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "wav",
-      "source_file": "scripts/verify-extension.mjs",
-      "source_location": "L10"
-    },
-    {
-      "id": "scripts_package_extension",
-      "label": "package-extension.mjs",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "package-extension.mjs",
-      "source_file": "scripts/package-extension.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_package_extension_extensiondir",
-      "label": "extensionDir",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "extensiondir",
-      "source_file": "scripts/package-extension.mjs",
-      "source_location": "L5"
-    },
-    {
-      "id": "scripts_package_extension_output",
-      "label": "output",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "output",
-      "source_file": "scripts/package-extension.mjs",
-      "source_location": "L7"
-    },
-    {
-      "id": "scripts_package_extension_packagedir",
-      "label": "packageDir",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "packagedir",
-      "source_file": "scripts/package-extension.mjs",
-      "source_location": "L6"
-    },
-    {
-      "id": "scripts_verify_package",
-      "label": "verify-package.mjs",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "verify-package.mjs",
-      "source_file": "scripts/verify-package.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_verify_package_buildpath",
-      "label": "buildPath",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "buildpath",
-      "source_file": "scripts/verify-package.mjs",
-      "source_location": "L7"
-    },
-    {
-      "id": "scripts_verify_package_packagepath",
-      "label": "packagePath",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "packagepath",
-      "source_file": "scripts/verify-package.mjs",
-      "source_location": "L6"
-    },
-    {
-      "id": "scripts_verify_package_temporarypath",
-      "label": "temporaryPath",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "temporarypath",
-      "source_file": "scripts/verify-package.mjs",
-      "source_location": "L8"
+      "norm_label": "state",
+      "source_file": "site/demo.ts",
+      "source_location": "L22"
     },
     {
       "id": "site_main",
       "label": "site/main.ts",
       "_origin": "ast",
-      "community": 9,
+      "community": 5,
       "file_type": "code",
       "norm_label": "site/main.ts",
       "source_file": "site/main.ts",
@@ -1373,11 +1270,231 @@
       "id": "site_main_banner",
       "label": "banner",
       "_origin": "ast",
-      "community": 9,
+      "community": 5,
       "file_type": "code",
       "norm_label": "banner",
       "source_file": "site/main.ts",
       "source_location": "L4"
+    },
+    {
+      "id": "tsconfig",
+      "label": "tsconfig.json",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "tsconfig.json",
+      "source_file": "tsconfig.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "tsconfig_include",
+      "label": "include",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "include",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "ref_entrypoints",
+      "label": "entrypoints",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "concept",
+      "norm_label": "entrypoints",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "ref_lib",
+      "label": "lib",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "concept",
+      "norm_label": "lib",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "ref_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "concept",
+      "norm_label": "scripts",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "ref_site",
+      "label": "site",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "concept",
+      "norm_label": "site",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "ref_tests",
+      "label": "tests",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "concept",
+      "norm_label": "tests",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "ref_ts",
+      "label": "*.ts",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "concept",
+      "norm_label": "*.ts",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "scripts_verify_extension",
+      "label": "verify-extension.mjs",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "verify-extension.mjs",
+      "source_file": "scripts/verify-extension.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_verify_extension_address",
+      "label": "address",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "address",
+      "source_file": "scripts/verify-extension.mjs",
+      "source_location": "L55"
+    },
+    {
+      "id": "scripts_verify_extension_extensionpath",
+      "label": "extensionPath",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "extensionpath",
+      "source_file": "scripts/verify-extension.mjs",
+      "source_location": "L8"
+    },
+    {
+      "id": "scripts_verify_extension_profilepath",
+      "label": "profilePath",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "profilepath",
+      "source_file": "scripts/verify-extension.mjs",
+      "source_location": "L9"
+    },
+    {
+      "id": "scripts_verify_extension_server",
+      "label": "server",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "server",
+      "source_file": "scripts/verify-extension.mjs",
+      "source_location": "L29"
+    },
+    {
+      "id": "scripts_verify_extension_wav",
+      "label": "wav",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "wav",
+      "source_file": "scripts/verify-extension.mjs",
+      "source_location": "L10"
+    },
+    {
+      "id": "scripts_package_extension",
+      "label": "package-extension.mjs",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "package-extension.mjs",
+      "source_file": "scripts/package-extension.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_package_extension_extensiondir",
+      "label": "extensionDir",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "extensiondir",
+      "source_file": "scripts/package-extension.mjs",
+      "source_location": "L5"
+    },
+    {
+      "id": "scripts_package_extension_output",
+      "label": "output",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "output",
+      "source_file": "scripts/package-extension.mjs",
+      "source_location": "L7"
+    },
+    {
+      "id": "scripts_package_extension_packagedir",
+      "label": "packageDir",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "packagedir",
+      "source_file": "scripts/package-extension.mjs",
+      "source_location": "L6"
+    },
+    {
+      "id": "scripts_verify_package",
+      "label": "verify-package.mjs",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "verify-package.mjs",
+      "source_file": "scripts/verify-package.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_verify_package_buildpath",
+      "label": "buildPath",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "buildpath",
+      "source_file": "scripts/verify-package.mjs",
+      "source_location": "L7"
+    },
+    {
+      "id": "scripts_verify_package_packagepath",
+      "label": "packagePath",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "packagepath",
+      "source_file": "scripts/verify-package.mjs",
+      "source_location": "L6"
+    },
+    {
+      "id": "scripts_verify_package_temporarypath",
+      "label": "temporaryPath",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "temporarypath",
+      "source_file": "scripts/verify-package.mjs",
+      "source_location": "L8"
     }
   ],
   "links": [
@@ -2258,6 +2375,18 @@
       "weight": 1.0
     },
     {
+      "source": "site_demo",
+      "target": "site_main",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "site/demo.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "tests_unit_motion_policy_test",
       "target": "lib_motion_policy",
       "relation": "imports_from",
@@ -2920,6 +3049,28 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_create_social_assets",
+      "target": "scripts_create_social_assets_source",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/create-social-assets.mjs",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_create_social_assets",
+      "target": "scripts_create_social_assets_output",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/create-social-assets.mjs",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_package_extension",
       "target": "scripts_package_extension_extensiondir",
       "relation": "contains",
@@ -3041,6 +3192,83 @@
       "weight": 1.0
     },
     {
+      "source": "site_demo",
+      "target": "site_demo_readstate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/demo.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "site_demo",
+      "target": "site_demo_state",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/demo.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "site_demo",
+      "target": "site_demo_savestate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/demo.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "site_demo",
+      "target": "site_demo_render",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/demo.ts",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "site_demo",
+      "target": "site_demo_profile",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/demo.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "site_demo",
+      "target": "site_demo_demostate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/demo.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "site_demo",
+      "target": "site_demo_profilebuttons",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/demo.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "site_main",
       "target": "site_main_banner",
       "relation": "contains",
@@ -3086,18 +3314,18 @@
     },
     {
       "source": "tests_e2e_site_spec",
-      "target": "tests_e2e_site_spec_siteroot",
+      "target": "tests_e2e_site_spec_startdisposablesite",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/e2e/site.spec.ts",
-      "source_location": "L7",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
       "source": "tests_e2e_site_spec",
-      "target": "tests_e2e_site_spec_startdisposablesite",
+      "target": "tests_e2e_site_spec_siteroot",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3273,5 +3501,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f1a07f42408f28f5536f3b829256faaf3d50303f"
+  "built_at_commit": "97cc7cf75cd4ad846e3b9a2293e044edbf13b4ab"
 }
