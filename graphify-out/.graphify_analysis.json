@@ -235,8 +235,8 @@
       "degree": 6
     },
     {
-      "id": "tsconfig_compileroptions_types",
-      "label": "types",
+      "id": "lib_motion_policy_pauseautoplaymedia",
+      "label": "pauseAutoplayMedia()",
       "degree": 5
     },
     {
@@ -245,8 +245,8 @@
       "degree": 5
     },
     {
-      "id": "lib_motion_policy_pauseautoplaymedia",
-      "label": "pauseAutoplayMedia()",
+      "id": "tsconfig_compileroptions_types",
+      "label": "types",
       "degree": 5
     }
   ],
