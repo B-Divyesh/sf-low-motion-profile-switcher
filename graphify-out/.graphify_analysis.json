@@ -203,13 +203,13 @@
       "degree": 7
     },
     {
-      "id": "entrypoints_content_main",
-      "label": "main()",
+      "id": "entrypoints_popup_main_render",
+      "label": "render()",
       "degree": 6
     },
     {
-      "id": "entrypoints_popup_main_render",
-      "label": "render()",
+      "id": "entrypoints_content_main",
+      "label": "main()",
       "degree": 6
     },
     {
@@ -218,13 +218,13 @@
       "degree": 6
     },
     {
-      "id": "lib_motion_policy_shouldapply",
-      "label": "shouldApply()",
+      "id": "lib_motion_policy_pauseautoplaymedia",
+      "label": "pauseAutoplayMedia()",
       "degree": 5
     },
     {
-      "id": "lib_motion_policy_pauseautoplaymedia",
-      "label": "pauseAutoplayMedia()",
+      "id": "lib_motion_policy_shouldapply",
+      "label": "shouldApply()",
       "degree": 5
     },
     {
@@ -234,17 +234,6 @@
     }
   ],
   "surprises": [
-    {
-      "source": "main()",
-      "target": "getEffectiveSetting()",
-      "source_files": [
-        "entrypoints/content.ts",
-        "lib/settings.ts"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "connects across different repos/directories; bridges separate communities"
-    },
     {
       "source": "render()",
       "target": "isTemporarilyAllowed()",
@@ -258,32 +247,43 @@
     },
     {
       "source": "main()",
-      "target": "pauseAutoplayMedia()",
+      "target": "getEffectiveSetting()",
       "source_files": [
         "entrypoints/content.ts",
-        "lib/motion-policy.ts"
+        "lib/settings.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "init()",
+      "target": "getEffectiveSetting()",
+      "source_files": [
+        "entrypoints/popup/main.ts",
+        "lib/settings.ts"
       ],
       "confidence": "EXTRACTED",
       "relation": "calls",
       "why": "connects across different repos/directories"
     },
     {
-      "source": "main()",
-      "target": "policyCss()",
+      "source": "init()",
+      "target": "normalizeHostname()",
       "source_files": [
-        "entrypoints/content.ts",
-        "lib/motion-policy.ts"
+        "entrypoints/popup/main.ts",
+        "lib/settings.ts"
       ],
       "confidence": "EXTRACTED",
       "relation": "calls",
       "why": "connects across different repos/directories"
     },
     {
-      "source": "main()",
-      "target": "restorePausedMedia()",
+      "source": "render()",
+      "target": "getEffectiveSetting()",
       "source_files": [
-        "entrypoints/content.ts",
-        "lib/motion-policy.ts"
+        "entrypoints/popup/main.ts",
+        "lib/settings.ts"
       ],
       "confidence": "EXTRACTED",
       "relation": "calls",
