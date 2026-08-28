@@ -1,30 +1,6 @@
 {
   "communities": {
     "0": [
-      "entrypoints_content",
-      "entrypoints_popup_main",
-      "entrypoints_popup_main_allsettings",
-      "entrypoints_popup_main_announce",
-      "entrypoints_popup_main_current",
-      "entrypoints_popup_main_init",
-      "entrypoints_popup_main_profileinputs",
-      "entrypoints_popup_main_profilename",
-      "entrypoints_popup_main_render",
-      "entrypoints_popup_main_save",
-      "lib_motion_policy_style_id",
-      "lib_settings",
-      "lib_settings_default_setting",
-      "lib_settings_exception_minutes",
-      "lib_settings_exceptionend",
-      "lib_settings_geteffectivesetting",
-      "lib_settings_motionprofile",
-      "lib_settings_normalizehostname",
-      "lib_settings_sitesetting",
-      "lib_settings_sitesettings",
-      "lib_settings_storage_key",
-      "tests_unit_settings_test"
-    ],
-    "1": [
       "axe_core_playwright",
       "jsdom",
       "package_devdependencies",
@@ -47,7 +23,52 @@
       "vitest",
       "wxt"
     ],
+    "1": [
+      "entrypoints_popup_main",
+      "entrypoints_popup_main_allsettings",
+      "entrypoints_popup_main_announce",
+      "entrypoints_popup_main_current",
+      "entrypoints_popup_main_init",
+      "entrypoints_popup_main_profileinputs",
+      "entrypoints_popup_main_profilename",
+      "entrypoints_popup_main_render",
+      "entrypoints_popup_main_save",
+      "lib_settings",
+      "lib_settings_default_setting",
+      "lib_settings_exception_minutes",
+      "lib_settings_exceptionend",
+      "lib_settings_geteffectivesetting",
+      "lib_settings_istemporarilyallowed",
+      "lib_settings_motionprofile",
+      "lib_settings_normalizehostname",
+      "lib_settings_sitesetting",
+      "lib_settings_sitesettings",
+      "lib_settings_storage_key",
+      "tests_unit_settings_test"
+    ],
     "2": [
+      "package",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_build_extension",
+      "package_scripts_build_site",
+      "package_scripts_check",
+      "package_scripts_clean",
+      "package_scripts_copy_download",
+      "package_scripts_dev",
+      "package_scripts_dev_site",
+      "package_scripts_package_extension",
+      "package_scripts_test",
+      "package_scripts_test_e2e",
+      "package_scripts_test_extension",
+      "package_scripts_test_package",
+      "package_scripts_test_unit",
+      "package_type",
+      "package_version"
+    ],
+    "3": [
       "ref_chrome",
       "ref_dom",
       "ref_dom_iterable",
@@ -69,28 +90,8 @@
       "tsconfig_compileroptions_types",
       "tsconfig_compileroptions_usedefineforclassfields"
     ],
-    "3": [
-      "package",
-      "package_name",
-      "package_private",
-      "package_scripts",
-      "package_scripts_build",
-      "package_scripts_build_extension",
-      "package_scripts_build_site",
-      "package_scripts_check",
-      "package_scripts_clean",
-      "package_scripts_copy_download",
-      "package_scripts_dev",
-      "package_scripts_dev_site",
-      "package_scripts_package_extension",
-      "package_scripts_test",
-      "package_scripts_test_e2e",
-      "package_scripts_test_extension",
-      "package_scripts_test_unit",
-      "package_type",
-      "package_version"
-    ],
     "4": [
+      "entrypoints_content",
       "entrypoints_content_main",
       "lib_motion_policy",
       "lib_motion_policy_ispreservedelement",
@@ -99,7 +100,7 @@
       "lib_motion_policy_policycss",
       "lib_motion_policy_restorepausedmedia",
       "lib_motion_policy_shouldapply",
-      "lib_settings_istemporarilyallowed",
+      "lib_motion_policy_style_id",
       "tests_unit_motion_policy_test"
     ],
     "5": [
@@ -117,7 +118,8 @@
       "scripts_verify_extension_address",
       "scripts_verify_extension_extensionpath",
       "scripts_verify_extension_profilepath",
-      "scripts_verify_extension_server"
+      "scripts_verify_extension_server",
+      "scripts_verify_extension_wav"
     ],
     "7": [
       "scripts_package_extension",
@@ -126,66 +128,81 @@
       "scripts_package_extension_packagedir"
     ],
     "8": [
+      "scripts_verify_package",
+      "scripts_verify_package_buildpath",
+      "scripts_verify_package_packagepath",
+      "scripts_verify_package_temporarypath"
+    ],
+    "9": [
       "site_main",
       "site_main_banner",
       "site_main_syncconnection"
     ],
-    "9": [
+    "10": [
+      "site_public_sw",
+      "site_public_sw_precacheshell",
+      "site_public_sw_shell"
+    ],
+    "11": [
+      "tests_e2e_site_spec",
+      "tests_e2e_site_spec_siteroot",
+      "tests_e2e_site_spec_startdisposablesite"
+    ],
+    "12": [
       "scripts_clean",
       "scripts_clean_target"
     ],
-    "10": [
+    "13": [
       "scripts_copy_download",
       "scripts_copy_download_downloads"
     ],
-    "11": [
-      "site_public_sw",
-      "site_public_sw_shell"
-    ],
-    "12": [
-      "entrypoints_background"
-    ],
-    "13": [
-      "playwright_config"
-    ],
     "14": [
-      "tests_e2e_site_spec"
+      "tests_unit_site_policy_test",
+      "tests_unit_site_policy_test_staticwebappconfig"
     ],
     "15": [
-      "vite_site_config"
+      "entrypoints_background"
     ],
     "16": [
-      "vitest_config"
+      "playwright_config"
     ],
     "17": [
+      "vite_site_config"
+    ],
+    "18": [
+      "vitest_config"
+    ],
+    "19": [
       "wxt_config"
     ]
   },
   "cohesion": {
-    "0": 0.18614718614718614,
-    "1": 0.09523809523809523,
+    "0": 0.09523809523809523,
+    "1": 0.19523809523809524,
     "2": 0.1,
-    "3": 0.10526315789473684,
-    "4": 0.4444444444444444,
+    "3": 0.1,
+    "4": 0.4727272727272727,
     "5": 0.25,
-    "6": 0.4,
+    "6": 0.3333333333333333,
     "7": 0.5,
-    "8": 0.6666666666666666,
-    "9": 1.0,
-    "10": 1.0,
-    "11": 1.0,
+    "8": 0.5,
+    "9": 0.6666666666666666,
+    "10": 0.6666666666666666,
+    "11": 0.6666666666666666,
     "12": 1.0,
     "13": 1.0,
     "14": 1.0,
     "15": 1.0,
     "16": 1.0,
-    "17": 1.0
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0
   },
   "gods": [
     {
       "id": "package_scripts",
       "label": "scripts",
-      "degree": 14
+      "degree": 15
     },
     {
       "id": "tsconfig_compileroptions",
@@ -208,18 +225,18 @@
       "degree": 6
     },
     {
-      "id": "entrypoints_content_main",
-      "label": "main()",
-      "degree": 6
-    },
-    {
       "id": "lib_settings_istemporarilyallowed",
       "label": "isTemporarilyAllowed()",
       "degree": 6
     },
     {
-      "id": "lib_motion_policy_pauseautoplaymedia",
-      "label": "pauseAutoplayMedia()",
+      "id": "entrypoints_content_main",
+      "label": "main()",
+      "degree": 6
+    },
+    {
+      "id": "tsconfig_compileroptions_types",
+      "label": "types",
       "degree": 5
     },
     {
@@ -228,23 +245,12 @@
       "degree": 5
     },
     {
-      "id": "tsconfig_compileroptions_types",
-      "label": "types",
+      "id": "lib_motion_policy_pauseautoplaymedia",
+      "label": "pauseAutoplayMedia()",
       "degree": 5
     }
   ],
   "surprises": [
-    {
-      "source": "render()",
-      "target": "isTemporarilyAllowed()",
-      "source_files": [
-        "entrypoints/popup/main.ts",
-        "lib/settings.ts"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "connects across different repos/directories; bridges separate communities"
-    },
     {
       "source": "main()",
       "target": "getEffectiveSetting()",
@@ -281,6 +287,17 @@
     {
       "source": "render()",
       "target": "getEffectiveSetting()",
+      "source_files": [
+        "entrypoints/popup/main.ts",
+        "lib/settings.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "render()",
+      "target": "isTemporarilyAllowed()",
       "source_files": [
         "entrypoints/popup/main.ts",
         "lib/settings.ts"
