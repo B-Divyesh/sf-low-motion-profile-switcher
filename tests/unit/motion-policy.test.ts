@@ -42,4 +42,20 @@ describe('motion policy', () => {
     expect(play).toHaveBeenCalledOnce();
     expect(ambient.hasAttribute(PAUSED_MEDIA_ATTR)).toBe(false);
   });
+
+  it('can enforce the policy on a media element when playback begins after the initial scan', () => {
+    document.body.innerHTML = '<audio id="delayed" autoplay></audio>';
+    const delayed = document.querySelector<HTMLAudioElement>('#delayed')!;
+    Object.defineProperty(delayed, 'paused', { value: true, configurable: true });
+    const pause = vi.spyOn(delayed, 'pause').mockImplementation(() => undefined);
+
+    pauseAutoplayMedia();
+    expect(pause).not.toHaveBeenCalled();
+    expect(delayed.hasAttribute(PAUSED_MEDIA_ATTR)).toBe(false);
+
+    Object.defineProperty(delayed, 'paused', { value: false, configurable: true });
+    pauseAutoplayMedia(delayed);
+    expect(pause).toHaveBeenCalledOnce();
+    expect(delayed.getAttribute(PAUSED_MEDIA_ATTR)).toBe('true');
+  });
 });

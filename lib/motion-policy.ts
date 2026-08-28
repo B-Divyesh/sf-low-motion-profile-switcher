@@ -47,7 +47,11 @@ export function isPreservedElement(element: Element): boolean {
 }
 
 export function pauseAutoplayMedia(root: ParentNode = document): void {
-  root.querySelectorAll<HTMLMediaElement>('video[autoplay], video[loop], audio[autoplay], audio[loop]').forEach((media) => {
+  const selector = 'video[autoplay], video[loop], audio[autoplay], audio[loop]';
+  const mediaElements = root instanceof HTMLMediaElement && root.matches(selector)
+    ? [root, ...root.querySelectorAll<HTMLMediaElement>(selector)]
+    : [...root.querySelectorAll<HTMLMediaElement>(selector)];
+  mediaElements.forEach((media) => {
     if (isPreservedElement(media) || media.paused) return;
     media.pause();
     media.setAttribute(PAUSED_MEDIA_ATTR, 'true');

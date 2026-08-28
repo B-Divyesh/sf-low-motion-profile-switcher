@@ -40,6 +40,7 @@ shown in the terminal.
 ## Test and build
 
 ```sh
+npm ci
 npm run check
 npm test
 npm run build
@@ -53,9 +54,12 @@ npm run test:e2e
 - `dist/site/` — static deployment root, including `index.html`, `/privacy/`,
   `/terms/`, and the packaged extension at `/downloads/`
 
-The Playwright suite uses Chromium 1.58.2 and checks the landing, privacy, and
-terms pages at desktop and 390 px mobile widths, including axe accessibility,
-console errors, semantic structure, offline messaging, and reduced motion.
+`npm test` also extracts the packaged ZIP, proves it matches the unpacked build,
+and runs the loaded-extension consumer checks against that extracted package.
+The Playwright suite uses Chromium 1.58.2 and checks the landing, privacy,
+terms, and 404 pages at desktop and 390 px mobile widths, including axe
+accessibility, target and text sizing, console errors, semantic structure,
+controlled offline reloads, update behavior, and reduced motion.
 
 ## Architecture and privacy
 

@@ -12,9 +12,10 @@
     "build": "npm run clean && npm run build:extension && npm run package:extension && npm run build:site && npm run copy:download",
     "copy:download": "node scripts/copy-download.mjs",
     "clean": "node scripts/clean.mjs",
-    "test": "vitest run && npm run test:extension",
+    "test": "vitest run && npm run test:package",
     "test:unit": "vitest run",
     "test:extension": "npm run build:extension && node scripts/verify-extension.mjs",
+    "test:package": "npm run build:extension && npm run package:extension && node scripts/verify-package.mjs",
     "test:e2e": "playwright test",
     "check": "tsc --noEmit"
   },

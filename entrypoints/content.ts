@@ -10,18 +10,28 @@ export default defineContentScript({
     const hostname = location.hostname.toLowerCase();
     let observer: MutationObserver | undefined;
     let exceptionTimer: number | undefined;
+    let playbackEnforcementInstalled = false;
 
-    const stopObserver = () => {
+    const enforcePlaybackPolicy = (event: Event) => {
+      if (event.target instanceof HTMLMediaElement) pauseAutoplayMedia(event.target);
+    };
+
+    const stopPolicyWatchers = () => {
       observer?.disconnect();
       observer = undefined;
+      if (playbackEnforcementInstalled) {
+        document.removeEventListener('play', enforcePlaybackPolicy, true);
+        document.removeEventListener('playing', enforcePlaybackPolicy, true);
+        playbackEnforcementInstalled = false;
+      }
       if (exceptionTimer) window.clearTimeout(exceptionTimer);
       exceptionTimer = undefined;
     };
 
     const removePolicy = () => {
       document.getElementById(STYLE_ID)?.remove();
+      stopPolicyWatchers();
       restorePausedMedia();
-      stopObserver();
     };
 
     const installPolicy = (css: string) => {
@@ -32,6 +42,11 @@ export default defineContentScript({
         (document.head ?? document.documentElement).append(style);
       }
       style.textContent = css;
+      if (!playbackEnforcementInstalled) {
+        document.addEventListener('play', enforcePlaybackPolicy, true);
+        document.addEventListener('playing', enforcePlaybackPolicy, true);
+        playbackEnforcementInstalled = true;
+      }
       pauseAutoplayMedia();
       if (!observer) {
         observer = new MutationObserver((changes) => {
