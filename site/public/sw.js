@@ -1,11 +1,13 @@
 const CACHE = 'low-motion-site-v3';
-const SHELL = ['/', '/privacy/', '/terms/'];
+const SHELL = ['/', '/demo/', '/privacy/', '/terms/'];
 
 async function precacheShell() {
   const cache = await caches.open(CACHE);
   const responses = await Promise.all(SHELL.map(async (path) => [path, await fetch(path, { cache: 'reload' })]));
   const dependencies = new Set([
     '/assets/favicon.svg',
+    '/assets/apple-touch-icon.png',
+    '/assets/social-preview.png',
     '/assets/signal-landscape-768.avif',
     '/assets/signal-landscape.avif',
     '/assets/signal-landscape-768.webp',

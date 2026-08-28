@@ -14,7 +14,7 @@ describe('site settings', () => {
     expect(isTemporarilyAllowed(setting, 1000)).toBe(false);
   });
 
-  it('creates a ten minute exception', () => {
+  it('creates a ten minute exception @claim:temporary-exception', () => {
     expect(exceptionEnd(1000)).toBe(601000);
   });
 });

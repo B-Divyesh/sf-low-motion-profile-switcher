@@ -25,7 +25,7 @@ describe('motion policy', () => {
     expect(isPreservedElement(document.querySelector('#noise')!)).toBe(false);
   });
 
-  it('pauses autoplay media outside status regions and restores only what it paused', async () => {
+  it('pauses autoplay media outside status regions and restores only what it paused @claim:extension-policy', async () => {
     document.body.innerHTML = '<video id="ambient" autoplay></video><div role="status"><video id="signal" autoplay></video></div>';
     const ambient = document.querySelector<HTMLVideoElement>('#ambient')!;
     const signal = document.querySelector<HTMLVideoElement>('#signal')!;

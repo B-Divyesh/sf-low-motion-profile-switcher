@@ -96,3 +96,12 @@ a label, icon, or state sentence.
 All interface icons and the LM monogram are original hand-authored SVG. No
 third-party visual assets, fonts from CDNs, analytics, or runtime scripts are
 used.
+
+### Distribution derivatives
+
+`site/public/assets/social-preview.png` is a 1200×630 PNG composition cropped
+from the accepted original `signal-landscape-v2.png`; it is used only for
+Open Graph and Twitter previews. `apple-touch-icon.png` is a 180×180 crop from
+the same accepted source. Both derivatives are created reproducibly by
+`scripts/create-social-assets.mjs` with local Sharp; no new third-party asset
+or generation prompt was introduced.

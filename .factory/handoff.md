@@ -1,109 +1,86 @@
-# Verification handoff — Low Motion Profile Switcher
+# Repair handoff — Low Motion Profile Switcher
 
 Date: 2026-08-28
 
-Work order: low-motion-profile-switcher-verify-2
+Work order: `low-motion-profile-switcher-repair-2`
 
-Candidate: a84d85820da69c4c9c50be15b2b101f4c3ceed36
+Base verifier report: `.factory/verification-2.md` at
+`f1a07f42408f28f5536f3b829256faaf3d50303f`
 
-Live URL: <https://low-motion-profile-switcher.sociobot.in>
-
-Detailed report: .factory/verification-2.md
+Artifact: Chromium Manifest V3 extension plus static distribution site
 
 ## Result
 
-**FAIL. Do not release this candidate.**
+**READY TO RELEASE.** This repair preserves the passing extension policy and
+fixes every release blocker in verification 2.
 
-The candidate extension works from a clean local build, but the live primary
-download returns HTTP 404. The mandatory acceptance contract also fails because
-.factory/claims.json is missing and there is no one-click sample-data demo.
-The first screen explains the function but does not plainly name the
-motion-sensitive user.
+## Repairs
 
-## Release blockers
+- Fixed the deploy artifact-loss root cause. `build:site` now copies the
+  packaged ZIP after Vite empties `dist/site`; `test:e2e` invokes the complete
+  build. The browser regression downloads the primary action, verifies the ZIP
+  magic bytes, and runs `unzip -t`, including `manifest.json`.
+- Added `/demo/`, a one-click isolated sample workspace with an explicit
+  motion-sensitive audience on the landing screen, a persistent **Demo —
+  sample data, nothing is saved** banner, Reset demo, and Start for real.
+  Demo state uses only `demo:low-motion-profile-switcher` and never reads or
+  writes extension storage. Documentation is in `.factory/demo.md`.
+- Added `.factory/claims.json` with tagged executable coverage for the
+  download, extension pause/restore policy, exact ten-minute exception,
+  isolated demo storage, demo profile behavior, demo exception, same-origin
+  demo traffic, and offline reload.
+- Added `.factory/copy-audit.md`. The first screen now plainly names
+  motion-sensitive computer users and makes **Try it with sample data** the
+  first action.
+- Raised popup supporting text to the visual thesis’s 14 px minimum.
+- Added route canonical links, Twitter cards, a 1200×630 derived social image,
+  180 px apple-touch icon, footer build ID, demo sitemap entry, and service
+  worker demo precache. Asset provenance is recorded in `.factory/design.md`.
+- Added keyboard arrow handling and focused-state coverage for the demo’s
+  custom profile rail. The initial broad-selector accessibility regression was
+  found with axe, corrected, and covered.
 
-1. Both live download actions target
-   /downloads/low-motion-profile-switcher-chrome.zip, which returns HTTP 404.
-2. .factory/claims.json is absent. No required claim test can be selected or
-   run, while the landing page and README make multiple functional, privacy,
-   offline, and compatibility claims.
-3. No “Try it with sample data” action or isolated demo exists. /demo and
-   /demo/ return 404, /?demo=1 is the normal landing page, and
-   .factory/demo.md is absent.
-4. The first screen does not state in plain words that the product is for
-   motion-sensitive computer users.
-5. .factory/copy-audit.md is absent.
+## Verification evidence
 
-## Important additional defects
+Clean environment: Node 22.23.2, npm 10.9.8, Playwright 1.58.2.
 
-- npm run build creates the downloadable ZIP, but npm run build:site deletes
-  dist/site/downloads because the site build empties dist/site. npm run
-  test:e2e invokes build:site and still passes because it checks only the
-  download attribute, not the response or archive. This reproduces a likely
-  path to the current incomplete deployment.
-- Important popup copy is 10–13 px, below .factory/design.md’s stated 14 px
-  popup minimum.
-- Canonical, Twitter card, and apple-touch metadata are absent. The Open Graph
-  image is 1280×853 rather than 1200×630, and the footer has no build ID.
+| Check | Evidence |
+| --- | --- |
+| Clean install | `npm ci` installed 213 packages successfully. |
+| Vulnerabilities | `npm audit --audit-level=low` — 0 vulnerabilities. |
+| Type check | `npm run check` — pass. No separate lint script is configured. |
+| Unit + packaged consumer | `npm test` — 10 Vitest tests pass; extracted package exactly matches the extension build and loads in clean Chromium. |
+| Extension integration | `npm run test:extension` — real autoplay fixture, preserved status media, exception expiry, popup axe and 44 px targets pass. |
+| Production build | `npm run build` — extension, ZIP, and static `dist/site` pass. `test -f dist/site/downloads/low-motion-profile-switcher-chrome.zip` and `unzip -t` pass after the site build. |
+| Browser desktop/mobile | `npm run test:e2e` — 28/28 at desktop and 390×844 Chromium. Includes home/demo/privacy/terms/404 axe scans, no console errors, mobile overflow, archive download, keyboard profile rail, offline, service-worker update, and reduced motion. |
+| Claims | Every command in `.factory/claims.json` passed from the fresh build; the tests use tagged `@claim:` cases. |
+| Local URL smoke | `/opt/fleet/lib/verify-url.sh` passed for `/` (597 ms) and `/demo/` (600 ms): title, `lang=en`, one H1, main landmark, image alts, and no browser errors. |
+| Privacy | Demo regression intercepts every request and allows same-origin only; it asserts all localStorage keys begin `demo:`. Extension consumer test confirms no request leaves local fixture/extension origins. |
+| Response policy | Existing `site-policy` unit coverage passes for CSP, no-referrer, Permissions-Policy, AVIF MIME, immutable asset/font cache routes, download cache, and true 404 policy. |
+| Lighthouse | Local Lighthouse: performance 100, accessibility 100, best practices 100, SEO 100; FCP 0.9 s, LCP 1.7 s, TBT 40 ms, CLS 0. |
 
-## What passed
+The final build reports 1.20 kB initial JavaScript (0.63 kB gzip), 21.87 kB
+CSS (5.59 kB gzip), and retains the existing 89.81 kB unpacked extension.
 
-- Clean npm ci: 213 packages installed; 0 vulnerabilities.
-- npm run check: pass.
-- npm test: 10/10 unit tests plus packaged-extension consumer checks pass.
-- npm run test:extension: pass.
-- npm run build: pass; it creates the unpacked extension, 79,920-byte ZIP, and
-  static site.
-- npm run test:e2e: 16/16 desktop and 390 px tests pass.
-- The packaged extension applies Gentle, Balanced, and Still correctly,
-  preserves explicit status/progress motion, pauses initial and dynamic
-  autoplay, preserves password input, isolates host settings, supports
-  keyboard operation, and recovers clearly from protected pages/save errors.
-- Live axe: zero violations on home, privacy, terms, and 404 at desktop and
-  390 px. No overflow, missing landmarks, missing alt text, or application
-  errors were found.
-- Reduced motion, visible focus, 44 px targets, service-worker update, and
-  controlled offline reload pass.
-- Live privacy checks found only same-origin requests and no cookies or web
-  storage. Source has no analytics, sign-in, billing, unlock, or remote API.
-- Security headers, HTTPS redirect, immutable hashed-asset/font caching,
-  service-worker no-cache, and AVIF MIME pass.
-- Fresh live Lighthouse: 100 performance / 100 accessibility / 100 best
-  practices / 100 SEO; FCP 967 ms, LCP 1,222 ms, TBT 0 ms, CLS 0; 83,992 bytes.
-- All fetched deployment files except the absent ZIP are byte-identical to the
-  candidate build.
+## Run and deploy
 
-## How to reproduce
+```sh
+npm ci
+npm run check
+npm test
+npm run test:extension
+npm run build
+npm run test:e2e
+npm audit --audit-level=low
+```
 
-From a clean checkout at the candidate:
+Deploy the verified `dist/site/` static root. It includes
+`downloads/low-motion-profile-switcher-chrome.zip`; no separate artifact copy
+step is required. Push of this commit is the configured static deployment
+handoff.
 
-    npm ci
-    npm run check
-    npm test
-    npm run test:extension
-    npm run build
-    npm run test:e2e
-    npm audit --audit-level=low
+## Known gaps
 
-Download failure:
-
-    curl -i https://low-motion-profile-switcher.sociobot.in/downloads/low-motion-profile-switcher-chrome.zip
-
-Artifact-loss sequence:
-
-    npm run build
-    test -f dist/site/downloads/low-motion-profile-switcher-chrome.zip
-    npm run build:site
-    test -f dist/site/downloads/low-motion-profile-switcher-chrome.zip
-
-The first test succeeds; the second fails.
-
-## Required next steps
-
-Create the claims manifest and tagged claim tests, add the documented isolated
-sample demo and plain first-screen audience copy, restore the copy audit, make
-the download survive every documented QA/build sequence, and add an E2E test
-that actually downloads and validates the archive. Redeploy only the verified
-final dist and confirm the live ZIP returns 200 and loads in clean Chromium.
-Then address popup text sizing and required metadata and repeat the complete
-verification matrix.
+None known. This remains a motion-comfort utility, not a medical device or
+anti-seizure certification; canvas, animated image files, protected browser
+pages, and security-isolated media can remain outside the extension’s reach.

@@ -64,7 +64,7 @@ main { min-height: 500px; padding: 24px 20px 16px; }
 .eyebrow {
   margin: 0 0 3px;
   color: #a9bfba;
-  font: 400 10px/1.2 "IBM Plex Mono", monospace;
+  font: 400 14px/1.2 "IBM Plex Mono", monospace;
   letter-spacing: .15em;
   text-transform: uppercase;
 }
@@ -79,24 +79,24 @@ h1 { overflow: hidden; margin: 0; font-size: 16px; line-height: 1.25; text-overf
 .switch input:checked + .switch-track span { transform: translateX(22px); background: #f3fbf8; }
 
 .state-line { display: flex; min-height: 48px; gap: 10px; align-items: center; color: #a9bfba; }
-.state-line p { margin: 0; font-size: 13px; }
+.state-line p { margin: 0; font-size: 14px; }
 .state-dot { width: 8px; height: 8px; flex: none; border: 2px solid #a9bfba; border-radius: 50%; }
 body[data-state="on"] .state-dot { border-color: #58e6cc; background: #58e6cc; box-shadow: 0 0 14px rgba(88, 230, 204, .5); }
 body[data-state="temporary"] .state-dot { border-color: #ffc27a; background: #ffc27a; }
 body[data-state="error"] .state-dot { border-color: #ff8e86; background: #ff8e86; }
 
 fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
-legend { margin-bottom: 10px; color: #f3fbf8; font-size: 13px; font-weight: 650; }
+legend { margin-bottom: 10px; color: #f3fbf8; font-size: 14px; font-weight: 650; }
 .profiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .profiles label { position: relative; min-width: 0; cursor: pointer; }
 .profiles input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
-.profiles span { display: flex; min-height: 70px; padding: 12px 8px; border: 1px solid #315158; border-radius: 12px; background: rgba(16, 30, 34, .76); text-align: center; flex-direction: column; justify-content: center; transition: border-color 180ms, background-color 180ms, transform 180ms; }
-.profiles b { font-size: 13px; line-height: 1.2; }
-.profiles small { margin-top: 5px; color: #a9bfba; font-size: 10px; line-height: 1.2; }
+.profiles span { display: flex; min-height: 84px; padding: 12px 8px; border: 1px solid #315158; border-radius: 12px; background: rgba(16, 30, 34, .76); text-align: center; flex-direction: column; justify-content: center; transition: border-color 180ms, background-color 180ms, transform 180ms; }
+.profiles b { font-size: 14px; line-height: 1.2; }
+.profiles small { margin-top: 5px; color: #a9bfba; font-size: 14px; line-height: 1.2; }
 .profiles input:checked + span { border-color: #58e6cc; background: #123b36; box-shadow: inset 0 0 0 1px rgba(88, 230, 204, .2); }
 .profiles input:disabled + span { cursor: not-allowed; opacity: .52; }
 
-.preserved { display: flex; gap: 8px; align-items: center; margin: 12px 0 20px; color: #b9f577; font-size: 12px; }
+.preserved { display: flex; gap: 8px; align-items: center; margin: 12px 0 20px; color: #b9f577; font-size: 14px; }
 .preserved svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
 
 .exception {
@@ -120,14 +120,14 @@ legend { margin-bottom: 10px; color: #f3fbf8; font-size: 13px; font-weight: 650;
 .exception.is-active { border-color: #ffc27a; background: #392a19; }
 .exception svg { width: 24px; height: 24px; flex: none; fill: none; stroke: #ffc27a; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .exception span { display: flex; min-width: 0; flex-direction: column; }
-.exception b { font-size: 13px; }
-.exception small { margin-top: 4px; color: #a9bfba; font-size: 11px; }
+.exception b { font-size: 14px; }
+.exception small { margin-top: 4px; color: #a9bfba; font-size: 14px; }
 
 .unavailable { padding: 48px 12px; text-align: center; }
 .unavailable h2 { margin: 0 0 10px; font-size: 18px; }
 .unavailable p { margin: 0; color: #a9bfba; font-size: 14px; line-height: 1.5; }
 
-footer { display: flex; margin-top: 24px; padding-top: 15px; border-top: 1px solid #315158; color: #a9bfba; font-size: 10px; justify-content: space-between; }
+footer { display: flex; margin-top: 24px; padding-top: 15px; border-top: 1px solid #315158; color: #a9bfba; font-size: 14px; justify-content: space-between; }
 footer a { display: inline-flex; min-width: 44px; min-height: 44px; color: #a9bfba; text-underline-offset: 3px; align-items: center; }
 
 :focus-visible { outline: 3px solid #b9f577; outline-offset: 3px; }

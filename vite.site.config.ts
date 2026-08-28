@@ -15,6 +15,7 @@ export default defineConfig({
         notFound: resolve(import.meta.dirname, 'site/404.html'),
         privacy: resolve(import.meta.dirname, 'site/privacy/index.html'),
         terms: resolve(import.meta.dirname, 'site/terms/index.html'),
+        demo: resolve(import.meta.dirname, 'site/demo/index.html'),
       },
     },
   },

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "extension-download",
+    "claim": "Download an installable Chromium extension ZIP.",
+    "where": "Landing page download actions and README",
+    "test": "npm run test:e2e -- --grep @claim:extension-download",
+    "sandbox": "Fresh static build; browser downloads the archive and unzip validates its manifest."
+  },
+  {
+    "id": "extension-policy",
+    "claim": "Profiles pause qualifying autoplay media and restore only media the extension paused.",
+    "where": "README and profile descriptions",
+    "test": "npm run test:unit -- -t @claim:extension-policy",
+    "sandbox": "Fresh DOM fixture with ambient and status media verifies pause, preservation, and restoration."
+  },
+  {
+    "id": "temporary-exception",
+    "claim": "A temporary exception lasts ten minutes before the selected profile resumes.",
+    "where": "Landing exception section and README",
+    "test": "npm run test:unit -- -t @claim:temporary-exception",
+    "sandbox": "Fresh settings fixture asserts the exact 600,000 ms exception period."
+  },
+  {
+    "id": "demo-sandbox",
+    "claim": "Try it with sample data without saving it to real settings.",
+    "where": "Landing primary action, demo banner, and README",
+    "test": "npm run test:e2e -- --grep @claim:demo-sandbox",
+    "sandbox": "Fresh browser opens /demo/, changes a profile, and verifies only the demo: storage key exists before reset removes it."
+  },
+  {
+    "id": "demo-profiles",
+    "claim": "The sample preview settles decorative motion while its order status remains visible.",
+    "where": "Demo workspace",
+    "test": "npm run test:e2e -- --grep @claim:demo-profiles",
+    "sandbox": "Fresh /demo/ visit selects Still and checks decorative animation stops while sample status animation remains."
+  },
+  {
+    "id": "demo-exception",
+    "claim": "The sample temporary exception restores decorative motion and then returns to the chosen profile.",
+    "where": "Demo workspace",
+    "test": "npm run test:e2e -- --grep @claim:demo-exception",
+    "sandbox": "Fresh /demo/ visit selects Still, starts and ends the exception, and observes both states."
+  },
+  {
+    "id": "demo-local-first",
+    "claim": "The demo uses only same-origin requests and demo-prefixed local storage.",
+    "where": "Demo banner and README",
+    "test": "npm run test:e2e -- --grep @claim:demo-local-first",
+    "sandbox": "Fresh /demo/ visit records requests and browser storage during a profile change."
+  },
+  {
+    "id": "offline-after-first-visit",
+    "claim": "The site works offline after the first visit.",
+    "where": "README",
+    "test": "npm run test:e2e -- --grep @claim:offline-after-first-visit",
+    "sandbox": "Fresh controlled browser first visits the site, then goes offline and observes the announced offline state."
+  }
+]

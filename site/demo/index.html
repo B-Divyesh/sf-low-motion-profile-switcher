@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071014" />
+    <meta name="description" content="Try Low Motion with a safe sample page before downloading the extension." />
+    <link rel="canonical" href="https://low-motion-profile-switcher.sociobot.in/demo/" />
+    <meta property="og:title" content="Demo — Low Motion Profile Switcher" />
+    <meta property="og:description" content="Try a low-motion profile with a safe sample page." />
+    <meta property="og:image" content="https://low-motion-profile-switcher.sociobot.in/assets/social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Demo — Low Motion Profile Switcher" />
+    <meta name="twitter:description" content="Try a low-motion profile with a safe sample page." />
+    <meta name="twitter:image" content="https://low-motion-profile-switcher.sociobot.in/assets/social-preview.png" />
+    <title>Demo — Low Motion Profile Switcher</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body class="demo-page">
+    <a class="skip-link" href="#main">Skip to demo</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Low Motion home"><span class="logo-lines" aria-hidden="true"><i></i><i></i><i></i></span><span>Low Motion</span></a>
+      <nav aria-label="Primary navigation"><a href="/">Home</a><a href="/privacy/">Privacy</a></nav>
+    </header>
+    <main id="main" class="demo-main">
+      <aside class="demo-banner" role="status"><strong>Demo — sample data, nothing is saved</strong><span>Changes stay in this sample only.</span><button type="button" data-reset-demo>Reset demo</button><a href="/downloads/low-motion-profile-switcher-chrome.zip" download>Start for real</a></aside>
+      <section class="demo-intro" aria-labelledby="demo-title">
+        <p class="kicker"><span aria-hidden="true"></span> Safe sample page</p>
+        <h1 id="demo-title">Try a calmer sample website.</h1>
+        <p>Choose a profile. Watch the decorative card settle while the order status keeps updating.</p>
+      </section>
+      <section class="demo-workspace" aria-label="Interactive Low Motion sample">
+        <div class="demo-controls">
+          <h2>Sample profile controls</h2>
+          <p id="demo-state" aria-live="polite">Balanced is active for this sample.</p>
+          <div class="demo-profile-buttons" role="radiogroup" aria-label="Sample motion profile">
+            <button type="button" role="radio" aria-checked="false" data-profile="gentle">Gentle<span>Shortens motion</span></button>
+            <button type="button" role="radio" aria-checked="true" data-profile="balanced">Balanced<span>Pauses loops</span></button>
+            <button type="button" role="radio" aria-checked="false" data-profile="still">Still<span>Stops motion</span></button>
+          </div>
+          <button class="demo-exception" type="button" data-exception>Allow motion for 10 minutes</button>
+          <p class="demo-note">This preview is not connected to your browser tabs or extension settings.</p>
+        </div>
+        <article class="demo-preview" data-profile="balanced" aria-label="Sample shopping page preview">
+          <header><span>Northline Supply</span><span class="demo-pill">Order #1042</span></header>
+          <div class="sample-grid">
+            <section class="demo-noise"><p>Featured collection</p><strong>Weekend layers</strong><span aria-hidden="true">✦</span></section>
+            <section class="sample-status" role="status" aria-live="polite"><p>Order status</p><strong>Picking items</strong><i aria-hidden="true"></i><span>Progress stays visible</span></section>
+          </div>
+          <p class="sample-focus"><button type="button">Review order</button><span>Keyboard focus remains clear.</span></p>
+        </article>
+      </section>
+    </main>
+    <footer class="site-footer compact"><p>Built by Param Factory · Motion comfort controls for the open web. Build 1.0.1.</p><nav aria-label="Footer navigation"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></footer>
+    <div class="offline-banner" role="status" hidden>You’re offline. This page still works; the download needs a connection.</div>
+    <script type="module" src="/demo.ts"></script>
+  </body>
+</html>

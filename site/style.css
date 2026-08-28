@@ -52,6 +52,7 @@ h1 em { color: var(--accent); font-style: normal; font-weight: 430; }
 .button { display: inline-flex; min-height: 52px; padding: 0 22px; gap: 10px; border: 1px solid var(--accent); border-radius: 4px; font-size: 14px; font-weight: 720; text-decoration: none; align-items: center; justify-content: center; transition: transform 180ms, background-color 180ms, box-shadow 180ms; }
 .button svg { width: 19px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
 .button.primary { color: #05201b; background: var(--accent); }
+.button.secondary { color: var(--text); background: rgba(16,30,34,.72); }
 .button:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(88,230,204,.15); }
 .text-link { display: inline-flex; min-height: 44px; gap: 8px; color: var(--text); font-size: 13px; text-decoration-color: var(--line); text-underline-offset: 5px; align-items: center; }
 .install-note { margin: 18px 0 0; color: var(--muted); font: 400 12px/1.5 "IBM Plex Mono", monospace; }
@@ -161,6 +162,47 @@ h2 { margin-bottom: 20px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; 
 .legal p:not(.kicker):not(.legal-lede):not(.updated) { color: var(--muted); font-size: 16px; line-height: 1.7; }
 .legal p a { display: inline-flex; min-width: 44px; min-height: 44px; margin: -10px -4px; padding: 0 4px; color: var(--accent); text-underline-offset: 4px; align-items: center; }
 
+.demo-main { width: var(--page); margin: 0 auto; padding: 48px 0 96px; }
+.demo-banner { position: sticky; z-index: 5; top: 12px; display: flex; margin-bottom: 72px; padding: 12px 14px; gap: 14px; border: 1px solid #427469; border-radius: 5px; color: #d7f7ef; background: rgba(16,30,34,.96); box-shadow: 0 10px 36px rgba(0,0,0,.25); font-size: 14px; align-items: center; }
+.demo-banner strong { color: var(--accent); }
+.demo-banner span { margin-right: auto; color: var(--muted); }
+.demo-banner button, .demo-banner a { display: inline-flex; min-width: 44px; min-height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: 3px; color: var(--text); background: transparent; font-weight: 650; text-decoration: none; align-items: center; justify-content: center; }
+.demo-banner button { cursor: pointer; }
+.demo-banner a { border-color: var(--accent); color: #05201b; background: var(--accent); }
+.demo-intro { max-width: 700px; margin-bottom: 48px; }
+.demo-intro h1 { margin-bottom: 18px; font-size: clamp(44px, 6vw, 70px); }
+.demo-intro > p:last-child { max-width: 590px; color: var(--muted); font-size: 18px; line-height: 1.6; }
+.demo-workspace { display: grid; border: 1px solid var(--line); background: rgba(16,30,34,.62); grid-template-columns: minmax(260px, .74fr) 1.26fr; }
+.demo-controls { padding: 32px; border-right: 1px solid var(--line); }
+.demo-controls h2 { margin-bottom: 12px; font-size: 25px; }
+.demo-controls > p { color: var(--muted); font-size: 16px; line-height: 1.5; }
+.demo-profile-buttons { display: grid; margin: 24px 0; gap: 8px; }
+.demo-profile-buttons button { display: flex; width: 100%; min-height: 64px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 4px; color: var(--text); background: #0d1b1f; cursor: pointer; font-size: 16px; font-weight: 700; text-align: left; align-items: center; justify-content: space-between; }
+.demo-profile-buttons button span { color: var(--muted); font-size: 14px; font-weight: 400; }
+.demo-profile-buttons button[aria-checked="true"] { border-color: var(--accent); background: #123b36; box-shadow: inset 0 0 0 1px rgba(88,230,204,.2); }
+.demo-exception { width: 100%; min-height: 52px; padding: 10px 14px; border: 1px solid #9b754b; border-radius: 4px; color: #fff4e7; background: #392a19; cursor: pointer; font-size: 16px; font-weight: 700; }
+.demo-note { margin: 20px 0 0; font-size: 14px !important; }
+.demo-preview { min-width: 0; padding: 22px; background: #eaf4f1; color: #16302d; }
+.demo-preview > header { display: flex; min-height: 44px; padding: 0 6px 20px; border-bottom: 1px solid #c5d9d4; font-size: 16px; font-weight: 760; align-items: center; justify-content: space-between; }
+.demo-pill { padding: 6px 8px; border-radius: 99px; color: #315c55; background: #d6e8e3; font: 400 12px "IBM Plex Mono", monospace; }
+.sample-grid { display: grid; padding: 38px 6px; gap: 18px; grid-template-columns: 1fr 1fr; }
+.demo-noise, .sample-status { min-height: 210px; padding: 24px; border-radius: 10px; }
+.demo-noise { position: relative; overflow: hidden; color: #f5fffc; background: #13584e; animation: demo-drift 1.4s ease-in-out infinite alternate; }
+.demo-noise p, .sample-status p { margin-bottom: 12px; font-size: 14px; }
+.demo-noise strong, .sample-status strong { display: block; max-width: 12ch; font-size: 28px; line-height: 1.06; letter-spacing: -.04em; }
+.demo-noise span { position: absolute; right: 20px; bottom: 14px; color: #b9f577; font-size: 52px; }
+.sample-status { border: 1px solid #b7d1c9; background: #fff; }
+.sample-status i { display: block; width: 76%; height: 8px; margin: 28px 0 14px; border-radius: 99px; background: linear-gradient(90deg, #087c69 62%, #d9e8e4 62%); animation: demo-status 2s ease-in-out infinite alternate; }
+.sample-status span { color: #4f6963; font-size: 14px; }
+.sample-focus { display: flex; padding: 0 6px 14px; gap: 12px; color: #4f6963; font-size: 14px; align-items: center; }
+.sample-focus button { min-width: 44px; min-height: 44px; padding: 0 14px; border: 1px solid #087c69; border-radius: 4px; color: #fff; background: #087c69; font-weight: 700; }
+.demo-preview[data-profile="gentle"] .demo-noise { animation-duration: 600ms; animation-iteration-count: 1; }
+.demo-preview[data-profile="balanced"] .demo-noise { animation-duration: 1ms; animation-iteration-count: 1; }
+.demo-preview[data-profile="still"] .demo-noise { animation: none; }
+.demo-preview[data-exception] .demo-noise { animation: demo-drift 1.4s ease-in-out infinite alternate; }
+@keyframes demo-drift { from { transform: translateX(-8px) rotate(-1deg); } to { transform: translateX(12px) rotate(1deg); } }
+@keyframes demo-status { from { transform: scaleX(.72); transform-origin: left; } to { transform: scaleX(1); transform-origin: left; } }
+
 [hidden] { display: none !important; }
 
 @media (max-width: 900px) {
@@ -227,6 +269,12 @@ h2 { margin-bottom: 20px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; 
   .final-cta { padding: 96px 20px; }
   .site-footer { padding-top: 40px; grid-template-columns: 1fr; }
   .site-footer nav { gap: 20px; flex-wrap: wrap; }
+  .demo-main { padding-top: 28px; }
+  .demo-banner { position: static; margin-bottom: 44px; flex-wrap: wrap; }
+  .demo-banner span { width: 100%; margin-right: 0; }
+  .demo-workspace { grid-template-columns: 1fr; }
+  .demo-controls { border-right: 0; border-bottom: 1px solid var(--line); }
+  .sample-grid { grid-template-columns: 1fr; }
   .legal { width: calc(100vw - 36px); padding: 80px 0 100px; }
 }
 
