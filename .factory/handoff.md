@@ -79,7 +79,10 @@ production (`sf-low-motion-profile-switcher`, resource group `sociobot`) with
 the supplied deployment configuration. Live verification at
 `https://low-motion-profile-switcher.sociobot.in` returned HTTP 200 for `/`,
 `/demo/`, and `/downloads/low-motion-profile-switcher-chrome.zip`; the live ZIP
-was 79,915 bytes and passed `unzip -t`. Live `verify-url.sh` also passed for
+was 79,915 bytes, SHA-256
+`998880830cd670f9befac8f5805e05ed5fdcd2fd472bb4933e131c93e9c1bc27`,
+matched the final local deployment ZIP byte-for-byte, and passed `unzip -t`.
+Live `verify-url.sh` also passed for
 home (2,604 ms) and demo (2,582 ms), both without browser errors.
 
 ## Known gaps
