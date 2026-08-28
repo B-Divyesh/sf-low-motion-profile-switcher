@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Low Motion Profile Switcher</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to controls</a>
+    <main id="main">
+      <header class="topline">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <p class="eyebrow">Low Motion</p>
+          <h1 id="site-name">This site</h1>
+        </div>
+        <label class="switch">
+          <span class="sr-only">Use low motion on this site</span>
+          <input id="enabled" type="checkbox" />
+          <span class="switch-track" aria-hidden="true"><span></span></span>
+        </label>
+      </header>
+
+      <section id="controls" aria-labelledby="profile-label">
+        <div class="state-line">
+          <span class="state-dot" aria-hidden="true"></span>
+          <p id="state-copy">Checking this page…</p>
+        </div>
+        <fieldset>
+          <legend id="profile-label">Motion profile</legend>
+          <div class="profiles">
+            <label>
+              <input type="radio" name="profile" value="gentle" />
+              <span><b>Gentle</b><small>Shortens motion</small></span>
+            </label>
+            <label>
+              <input type="radio" name="profile" value="balanced" />
+              <span><b>Balanced</b><small>Pauses loops</small></span>
+            </label>
+            <label>
+              <input type="radio" name="profile" value="still" />
+              <span><b>Still</b><small>Stops motion</small></span>
+            </label>
+          </div>
+        </fieldset>
+        <p class="preserved"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m3 10 4 4 10-10"/></svg> Progress and status updates stay visible</p>
+        <button id="exception" class="exception" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 9 9"/></svg>
+          <span><b>Allow motion for 10 minutes</b><small>Temporary exception for this site</small></span>
+        </button>
+      </section>
+
+      <section id="unavailable" class="unavailable" hidden aria-labelledby="unavailable-title">
+        <h2 id="unavailable-title">This page can’t be adjusted</h2>
+        <p>Browser settings, extension pages, and the store are protected. Open a regular website to choose a profile.</p>
+      </section>
+
+      <footer><a href="https://low-motion-profile-switcher.sociobot.in/#how-it-works" target="_blank">How profiles work <span aria-hidden="true">↗</span></a><span>Stored on this device</span></footer>
+      <p id="announcement" class="sr-only" aria-live="polite"></p>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

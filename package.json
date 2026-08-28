@@ -1,0 +1,35 @@
+{
+  "name": "low-motion-profile-switcher",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:site": "vite --config vite.site.config.ts",
+    "build:extension": "wxt build",
+    "build:site": "vite build --config vite.site.config.ts",
+    "package:extension": "node scripts/package-extension.mjs",
+    "build": "npm run clean && npm run build:extension && npm run package:extension && npm run build:site && npm run copy:download",
+    "copy:download": "node scripts/copy-download.mjs",
+    "clean": "node scripts/clean.mjs",
+    "test": "vitest run && npm run test:extension",
+    "test:unit": "vitest run",
+    "test:extension": "npm run build:extension && node scripts/verify-extension.mjs",
+    "test:e2e": "playwright test",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@fontsource-variable/inter": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "@playwright/test": "1.58.2",
+    "@types/chrome": "0.1.1",
+    "@types/node": "24.3.0",
+    "jsdom": "26.1.0",
+    "sharp": "0.35.4",
+    "typescript": "5.9.2",
+    "vite": "8.2.2",
+    "vitest": "4.1.11",
+    "wxt": "0.21.4"
+  }
+}
